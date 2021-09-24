@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <slot name="itemImage"></slot>
-    <slot name="itemPoint"></slot>
+  <div class="slide">
+    <slot></slot>
   </div>
 </template>
 
@@ -12,4 +11,12 @@ export default {
 </script>
 
 <style scoped>
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+}
 </style>

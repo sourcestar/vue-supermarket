@@ -3,20 +3,33 @@
     <Navbar class="homeNav">
       <div slot="navcenter">购物街</div>
     </Navbar>
-    <swiper></swiper>
+    <home-swiper :banners="banners"></home-swiper>
     <p>首页</p>
   </div>
 </template>
 
 <script>
 import Navbar from "@components/common/navbar/Navbar.vue";
-import Swiper from "@components/common/swiper/Swiper.vue";
+import HomeSwiper from "./childcomp/HomeSwiper.vue";
+import { getHomeMultidata } from "@network/home";
 export default {
   name: 'Home',
   components: {
     Navbar,
-    Swiper
-  }
+    HomeSwiper
+  },
+  data() {
+    return {
+      banners: [],
+      recommends: [],
+    }
+  },
+  created() {
+    getHomeMultidata().then(res => {
+      console.log(res);
+      this.banners = res.data.banner.list;
+    });
+  },
 }
 </script >
 

@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
 export function request(config) {
   // 创建axios实例
   const instance = axios.create({
-    baseURL: 'http://123.207.32.32:8000',
+    baseURL: "http://123.207.32.32:8000",
     timeout: 5000,
   });
 
   // 请求拦截器
-  instance.interceptors.request(
+  instance.interceptors.request.use(
     (config) => {
       // console.log(config);
       return config;
@@ -18,7 +18,7 @@ export function request(config) {
     }
   );
   // 响应拦截器
-  instance.interceptors.response(
+  instance.interceptors.response.use(
     (res) => {
       // console.log(res);
       return res.data;
