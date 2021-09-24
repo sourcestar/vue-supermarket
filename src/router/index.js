@@ -2,10 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // 路由懒加载
-const HomePage = () => import('@views/tabbar/home/Home.vue');
-const CategoryPage = () => import('@views/tabbar/category/Category.vue');
-const CartPage = () => import('@views/tabbar/cart/Cart.vue');
-const ProfilePage = () => import('@views/tabbar/profile/Profile.vue');
+const HomePage = () => import('@views/home/Home.vue');
+const CategoryPage = () => import('@views/category/Category.vue');
+const CartPage = () => import('@views/cart/Cart.vue');
+const ProfilePage = () => import('@views/profile/Profile.vue');
 
 // 使用插件
 Vue.use(VueRouter);
