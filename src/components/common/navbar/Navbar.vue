@@ -21,10 +21,14 @@ export default {
 <style scoped>
 .navbar {
   display: flex;
+  width: 100%;
   height: 44px;
   line-height: 44px;
   text-align: center;
   box-shadow: 0px 1px 2px 1px rgba(100, 100, 100, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 9;
 }
 .navleft,
 .navright {
